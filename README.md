@@ -1,6 +1,7 @@
 # Práctica-01-05-iaw
 ## En esta práctica vamos a usar una máquina de ubuntu en la que vamos a aprender a usar let´s encrypt y Cerbot.Para ello primero creamos nuestra máquina de ubuntu en Amazon.
-
+![cap 1](https://github.com/JoseFco04/practica-01-05-iaw/assets/145347148/29efd9fa-346c-47db-b376-6072b104559a)
+![cap 2](https://github.com/JoseFco04/practica-01-05-iaw/assets/145347148/f0f5d141-e73f-4829-bd8c-3b0fc0474899)
 ### Una vez que tenemos ya la máquina le instalamos y configuramos un sitio web mediante un script que hemos usado anteriormente el install_lamp, que paso por paso es este:
 
 #### Muestra todos los comandos que se van ejecutando
@@ -39,6 +40,7 @@ systemctl restart apache2
 chown -R www-data:www-data /var/www/html
 ~~~
 ### Después tenemos que registrar un nombre de dominio que para ello vamos a usar la página de No-IP
+![cap 3](https://github.com/JoseFco04/practica-01-05-iaw/assets/145347148/68f314f3-3e55-4299-9359-adae4bc7a816)
 
 ### Ahora instalaremos y configuraremos nuestro cliente ACME Cerbot, para ello creamos este script paso por paso para hacerlo:
 
