@@ -4,7 +4,7 @@
 set -ex
 
 # Actualizamos los repositorios
-# apt update
+apt update
 
 # Actualizamos los paquetes
 

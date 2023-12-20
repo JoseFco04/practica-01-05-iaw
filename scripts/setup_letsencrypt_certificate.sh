@@ -7,17 +7,17 @@ set -ex
 apt update 
 
 # Actualizamos los paquetes 
-apt upgrade -y
+#apt upgrade -y
 
 # Importamos el archivo de variables .env
 source .env
 
+# Eliminamos cualquier instalación previa de cerbot con apt
+apt remove certbot
+
 # Instalamos y actualizamos aquí 
 snap install core 
 snap refresh core
-
-# Eliminamos cualquier instalación previa de cerbot con apt
-apt remove certbot
 
 # Instalamos la aplicación de cerbot 
 snap install --classic certbot 
