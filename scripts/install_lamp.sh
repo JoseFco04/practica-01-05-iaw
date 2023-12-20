@@ -1,29 +1,31 @@
 #!/bin/bash
 
-# Muestra todos los comandos que se van ejecutando
+#Muestra todos los comandos que se van ejecutando
 set -ex
 
-# Actualizamos los repositorios
+#Actualizamos los repositorios
 apt update
 
-# Actualizamos los paquetes
+#Actualizamos los paquetes
+#apt upgrade -y
 
-# apt upgrade -y
+#Instalamos el servidor web Apache
+sudo apt install apache2 -y
 
-# instalamos el servidor web Apache
-apt install apache2 -y
+#Instalamos el gestor de bases de datos MySQL
+sudo apt install mysql-server -y
 
-# Instalamos e sistema gestor de base de datos de mysql
-apt install mysql-server -y
-
-#mysql -u $DB_USER -p $DP_PASSWD < .../sql/database.sql
-
-# Instalamos  PHP
+#Instalamos PHP
 apt install php libapache2-mod-php php-mysql -y
 
-# Reiniciamos el servicio Apache
+# Copiamos el archivo conf de apache 
+cp ../conf/000-default.conf /etc/apache2/sites-available
+
+#Reiniciamos el servicio de Apache
 systemctl restart apache2
 
-# Modificamos el propietario y el grupo del directorio /var/www/html
+# Copiamos el archivo de php 
+cp ../php/index.php /var/www/html
 
+#Modificamos el propietario y el grupo del directorio /var/www/html
 chown -R www-data:www-data /var/www/html
